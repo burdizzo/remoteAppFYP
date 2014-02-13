@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+     <title>Eco Tourist App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <!-- Add Phonegap scripts -->
+    <script type="text/javascript" src="./js/cordova.js"></script>
+
+    <!-- Add jQuery mobile CSS -->
+    <link rel="stylesheet" href="./css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="./css/jquery.mobile.structure-1.4.0.min.css">
+ 	<link rel="stylesheet" href="./css/themes/EcoTouristIRL.min.css" />
+	<link rel="stylesheet" href="./css/mycss.css">
+    
+     <!-- Adding jQuery & jQuery mobile   -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnDhtYB-3OWwl1BclRpaB7NOKmot8sg-s&sensor=true"></script>
+   	<script type="text/javascript" src="./js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/jquery.mobile-1.4.0.js"></script>
+    <script type="text/javascript" src="./js/myJavaScript.js"></script>
+  	<script type="text/javascript" src="./js/jquery.ui.map.js"></script>
+       
+      
+ </head>
+ <body onload="init();">    
+    <!--landingmap wrapper -->
+    <div data-role="page" id="landingmap">
+        
+      <!--Header-->
+      <div data-role="header"  data-position="fixed" data-fullscreen="false" data-tap-toggle="false">
+        <h1>Eco Tourist IRL</h1>
+          <a data-role="button"
+          	class="togglemenu"
+            data-iconshadow="false"
+            data-corners="false"
+            data-theme="a"
+            data-icon="homeicon">
+       	  </a>
+       </div>
+       <!--Header End-->
+        
+       <!--Content-->  
+       <div data-role="content" position="absolute" style="width:100%; height:100%; padding:0; margin:0;">
+             <div id="mapcanvas" style="width:100%; height:100%; position:relative;"></div>                 
+       </div>
+        <!--Content End-->  
+      
+    </div> 
+    <!--landingmap Wrapper End-->
+	 
+    <!--about Wrapper -->
+    <div data-role="page" id="about">
+    	      
+       	<!--Header-->
+      	<div data-role="header"  data-position="fixed" data-fullscreen="false" data-tap-toggle="false">
+            <h1>Eco Tourist IRL</h1>
+              <a data-role="button"
+              	class="togglemenu"
+                data-iconshadow="false"
+                data-corners="false"
+                data-theme="a"
+                data-icon="homeicon">
+              </a>
+       	</div>
+       	<!--Header End-->
+       	
+       	<!--Content--> 
+      	<div data-role="content" >
+      		<h3 class="ui-bar ui-bar-a ui-corner-all">About</h3>
+    		  <div class="ui-body ui-body-a ui-corner-all">
+          	<p> This App was developed in conjunction with NUI Galway Ryan Institute is to merge tourism and technology to allow interested parties to witness first hand Ireland’s renewable energy potential. The energy tours, supported by the EU REMOTE project, will offer an insight into the latest renewable energy research against the backdrop of Ireland’s world famous western coast.<br><br>
+The sites listed in this app can provide renewable energy demonstrations and training in new energy technologies, and will bring economic and educational benefits across the region to investors, local authorities, researchers, policy makers, students and the general public.  This app provides an opportunity for local stakeholders to learn about the technology and best practice within the renewable energy sector, which can increase understanding of the technology and potential for rural communities. With the help of this app you will be able to build your knowledge and promote the development of a renewable energy network across rural areas that will be sustainable beyond the project activities.</p>
+     		</div>
+       
+        <a href="#landingmap">Back to map</a>
+      </div>
+      <!--Content End-->
+    
+      <!--Footer-->
+      <div data-role="footer">
+        <h1></h1>
+      </div>
+      <!--Footer End-->
+	</div> 
+    <!--about Wrapper End-->
+    
+    <!-- technologies Wrapper -->
+	<div data-role="page" id="technologies">
+     
+       	<!--Header-->
+      	<div data-role="header"  data-position="fixed" data-fullscreen="false" data-tap-toggle="false">
+            <h1>Eco Tourist IRL</h1>
+              <a data-role="button"
+            	class="togglemenu"
+                data-iconshadow="false"
+                data-corners="false"
+                data-theme="a"
+                data-icon="homeicon">
+              </a>
+       	</div>
+       	<!--Header End-->
+       	
+       	<!--Content--> 
+      	<div data-role="content" >
+      	<ul data-role="listview">
+ 			 <li><a href="#">Solar PV</a></li>
+  			 <li><a href="#">Geo Thermal</a></li>
+ 			 <li><a href="#">Vanadium Redox Batteries</a></li>
+             <li><a href="#">Quantum Heaters</a></li>
+             <li><a href="#">Rain Water Harvesting</a></li>
+             <li><a href="#">Biomass</a></li>
+		</ul>
+    		
+      	</div>
+      	<!--Content End-->
+    
+      <!--Footer-->
+      <div data-role="footer">
+        <h1>Footer Text</h1>
+      </div>
+    
+    
+	</div>
+    
+     <!-- Sites Wrapper -->
+	<div data-role="page" id="sites">
+         
+       	<!--Header-->
+      	<div data-role="header"  data-position="fixed" data-fullscreen="false" data-tap-toggle="false">
+            <h1>Eco Tourist IRL</h1>
+              <a data-role="button"
+              	class="togglemenu"
+                data-iconshadow="false"
+                data-corners="false"
+                data-theme="a"
+                data-icon="homeicon">
+              </a>
+       	</div>
+       	<!--Header End-->
+       	
+       	<!--Content--> 
+      	<div data-role="content" >
+      	<ul data-role="listview">
+ 			 <li><a href="#">Aran Bike Hire (Rothai Arainn Teo)</a></li>
+  			 <li><a href="#burren">The Burren Perfumery</a></li>
+ 			 <li><a href="#">Inishoirr Arts Centre (Aras Eanna)</a></li>
+             <li><a href="#">NUI Galway Engineering Building</a></li>
+		</ul>
+    		
+      	</div>
+      	<!--Content End-->
+    
+      <!--Footer-->
+      <div data-role="footer">
+        <h1></h1>
+      </div>
+      
+      </div>
+      
+       <!-- Burren Wrapper -->
+	<div data-role="page" id="burren">
+          
+       	<!--Header-->
+      	<div data-role="header"  data-position="fixed" data-fullscreen="false" data-tap-toggle="false">
+            <h1>Eco Tourist IRL</h1>
+              <a class="togglemenu" data-role="button"
+                data-iconshadow="false"
+                data-corners="false"
+                data-theme="a"
+                data-icon="homeicon">
+              </a>
+       	</div>
+       	<!--Header End-->
+       	
+       	<!--Content--> 
+      	<div data-role="content" >
+        
+        <center><h1>The Burren Perfumery</h1></center>
+           <div id='burren_img'>
+            	<center><img src="./images/burren_1.jpg"></center>
+            </div>
+        
+        <div data-role="collapsible">
+            <h4>Description</h4>
+            <p>The Burren Perfumery, located in Fahee North, Carron, Co. Clare, manufactures perfumes, creams, balms, soaps using natural and organic ingredients. Everything is made on site, by hand, in small batches. Visitors are always welcome to the Perfumery and can watch the free audiovisual presentation, enjoy wandering through the gardena, chatting with the staff in their workshops or browsing in the shop. In the summer our organic Tea Rooms makes delicious lunches and cakes.</p>
+        </div>
+         <div data-role="collapsible">
+            <h4>Technical Details</h4>
+            <br><p><b>Plant power:</b> 12.600 kWp 
+            <br><b>Annual Production:</b> approx. 10,710 kWh (850 kWh/kWp)</p>
+			<br><b>CO2 avoided: </b> Approx. 7.5 tons per annum</p> 
+        </div>
+         <div data-role="collapsible">
+            <h4>Other Links</h4>
+            <p><a href="http://www.burrenperfumery.com/">Burren Perfumery Website</a></p>
+            <p><a href="http://www.burrenperfumery.com/solar/">Burren Perfumery Solar Installation</a></p>
+            <p><a href="http://www.sunnyportal.com/Templates/PublicPagesPlantList.aspx"> Burren Real Time Data</a></p>
+        </div>
+      	    		
+      	</div>
+      	<!--Content End-->
+    
+      <!--Footer-->
+      <div data-role="footer">
+        <h1></h1>
+      </div>
+    </div>
+    
+	</div>
+  </body>
+</html>
